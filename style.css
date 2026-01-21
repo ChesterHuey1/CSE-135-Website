@@ -1,0 +1,25 @@
+body {
+    margin: 40px;
+    font-family: serif;
+}
+
+.header-left {
+    float: left;
+}
+
+.team-card {
+    float: right;
+    width: 300px;
+    background: #f0f0f0;
+    padding: 20px;
+}
+
+.clear {
+    clear: both;
+}
+
+.gray-box {
+    background: #f0f0f0;
+    padding: 15px;
+    margin-bottom: 20px;
+}
