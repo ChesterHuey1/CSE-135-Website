@@ -1,0 +1,20 @@
+[0;1;32m●[0m apache2.service - The Apache HTTP Server
+     Loaded: loaded (]8;;file://ubuntu28/usr/lib/systemd/system/apache2.service/usr/lib/systemd/system/apache2.service]8;;; [0;1;32menabled[0m; preset: [0;1;32menabled[0m)
+     Active: [0;1;32mactive (running)[0m since Sat 2026-01-31 21:22:11 UTC; 40s ago
+       Docs: ]8;;https://httpd.apache.org/docs/2.4/https://httpd.apache.org/docs/2.4/]8;;
+    Process: 50603 ExecStart=/usr/sbin/apachectl start (code=exited, status=0/SUCCESS)
+   Main PID: 50606 (/usr/sbin/apach)
+      Tasks: 6 (limit: 2318)
+     Memory: 39.5M (peak: 39.8M)
+        CPU: 261ms
+     CGroup: /system.slice/apache2.service
+             ├─[0;38;5;245m50606 /usr/sbin/apache2 -k start[0m
+             ├─[0;38;5;245m50609 /usr/sbin/apache2 -k start[0m
+             ├─[0;38;5;245m50610 /usr/sbin/apache2 -k start[0m
+             ├─[0;38;5;245m50611 /usr/sbin/apache2 -k start[0m
+             ├─[0;38;5;245m50612 /usr/sbin/apache2 -k start[0m
+             └─[0;38;5;245m50613 /usr/sbin/apache2 -k start[0m
+
+Jan 31 21:22:11 ubuntu28 systemd[1]: Starting apache2.service - The Apache HTTP Server...
+Jan 31 21:22:11 ubuntu28 apachectl[50605]: AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 127.0.1.1. Set the 'ServerName' directive globally to suppress this message
+Jan 31 21:22:11 ubuntu28 systemd[1]: Started apache2.service - The Apache HTTP Server.

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head><title>PHP Echo Form</title></head>
+<body>
+    <h1 align="center">PHP Echo Request Form</h1>
+    <hr/>
+    <form>
+        HTTP Method:<br>
+        <select id="method">
+            <option value="GET">GET</option>
+            <option value="POST">POST</option>
+            <option value="PUT">PUT</option>
+            <option value="DELETE">DELETE</option>
+        </select><br><br>
+
+        Encoding:<br>
+        <select id="encoding">
+            <option value="application/x-www-form-urlencoded">x-www-form-urlencoded</option>
+            <option value="application/json">application/json</option>
+        </select><br><br>
+
+        Data to Echo:<br>
+        <input type="text" id="echo_data" value="Hello PHP"><br><br>
+
+        <button type="button" onclick="send()">Submit Echo</button>
+    </form>
+    <hr/>
+    <h3>Server Response:</h3>
+    <div id="out"></div>
+
+    <script>
+        async function send() {
+            const m = document.getElementById('method').value;
+            const e = document.getElementById('encoding').value;
+            const d = document.getElementById('echo_data').value;
+            const out = document.getElementById('out');
+            
+            let url = 'echo-php.php'; 
+            let opt = { method: m, headers: {} };
+
+            if (m === 'GET') {
+                url += '?data=' + encodeURIComponent(d);
+            } else {
+                opt.headers['Content-Type'] = e;
+                opt.body = (e === 'application/json') ? JSON.stringify({data:d}) : 'data='+encodeURIComponent(d);
+            }
+
+            try {
+                const res = await fetch(url, opt);
+                out.innerHTML = await res.text();
+            } catch (err) {
+                out.innerHTML = "Error: " + err;
+            }
+        }
+    </script>
+</body>
+</html>
