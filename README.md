@@ -10,6 +10,6 @@ Push your code to the repository.
 Username: Chhuey
 Password: Fm53383S!s
 
-IP Address: 137.184.4.254 
+
 Website: https://chesterhuey.com/
 website for HW3: https://test.chesterhuey.com/
