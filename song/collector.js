@@ -2,7 +2,7 @@
   'use strict';
 
 const config = {
-  endpoint: 'https://test.chesterhuey.com/collect', // Node server URL
+  endpoint: 'https://test.chesterhuey.com/collect',
   debug: false
 };
 
