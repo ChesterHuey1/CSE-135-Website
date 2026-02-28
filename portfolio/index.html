@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chester Huey</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ── Navbar ───────────────────────────────────────────── -->
+  <nav>
+    <div class="nav-inner">
+      <a href="#about" class="nav-logo">Chester Huey</a>
+      <div class="nav-links">
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ── About ────────────────────────────────────────────── -->
+  <section id="about">
+    <div class="section-inner">
+      <div class="about-grid">
+
+        <div class="about-left">
+          <!-- Profile pic frog -->
+          <div class="pfp-wrap">
+            <svg class="anim-pfp" viewBox="0 0 192 192" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="192" height="192" fill="#d1fae5"/>
+              <!-- body -->
+              <ellipse cx="96" cy="128" rx="56" ry="48" fill="#4ade80"/>
+              <!-- head -->
+              <ellipse cx="96" cy="88" rx="50" ry="44" fill="#4ade80"/>
+              <!-- belly -->
+              <ellipse cx="96" cy="134" rx="37" ry="30" fill="#bbf7d0"/>
+              <!-- eye whites -->
+              <circle cx="72" cy="68" r="16" fill="white"/>
+              <circle cx="120" cy="68" r="16" fill="white"/>
+              <!-- pupils -->
+              <ellipse class="eye-l" cx="74" cy="70" rx="9" ry="10" fill="#15803d" style="transform-origin:74px 70px"/>
+              <circle cx="76" cy="68" r="4.5" fill="#111827"/>
+              <circle cx="78" cy="66" r="2" fill="white"/>
+              <ellipse class="eye-r" cx="122" cy="70" rx="9" ry="10" fill="#15803d" style="transform-origin:122px 70px"/>
+              <circle cx="124" cy="68" r="4.5" fill="#111827"/>
+              <circle cx="126" cy="66" r="2" fill="white"/>
+              <!-- nostrils -->
+              <ellipse cx="88" cy="86" rx="3" ry="2" fill="#16a34a"/>
+              <ellipse cx="104" cy="86" rx="3" ry="2" fill="#16a34a"/>
+              <!-- mouth -->
+              <path d="M78 101 Q96 113 114 101" stroke="#16a34a" stroke-width="3" fill="none" stroke-linecap="round"/>
+              <!-- tongue -->
+              <ellipse class="tongue" cx="96" cy="106" rx="11" ry="5" fill="#f87171" style="transform-origin:96px 101px"/>
+              <!-- arms -->
+              <ellipse cx="46" cy="136" rx="13" ry="8" fill="#4ade80" transform="rotate(-28 46 136)"/>
+              <ellipse cx="146" cy="136" rx="13" ry="8" fill="#4ade80" transform="rotate(28 146 136)"/>
+              <!-- legs -->
+              <ellipse cx="70" cy="174" rx="22" ry="10" fill="#4ade80" transform="rotate(-14 70 174)"/>
+              <ellipse cx="122" cy="174" rx="22" ry="10" fill="#4ade80" transform="rotate(14 122 174)"/>
+              <!-- toes -->
+              <circle cx="55" cy="178" r="4" fill="#16a34a"/>
+              <circle cx="64" cy="182" r="4" fill="#16a34a"/>
+              <circle cx="74" cy="183" r="4" fill="#16a34a"/>
+              <circle cx="118" cy="183" r="4" fill="#16a34a"/>
+              <circle cx="128" cy="182" r="4" fill="#16a34a"/>
+              <circle cx="137" cy="178" r="4" fill="#16a34a"/>
+              <!-- back spots -->
+              <circle cx="82" cy="116" r="5" fill="#16a34a" opacity="0.35"/>
+              <circle cx="110" cy="120" r="4" fill="#16a34a" opacity="0.35"/>
+            </svg>
+          </div>
+
+          <h1 class="about-name">Chester Huey</h1>
+          <p class="about-subtitle">Computer Science at UC San Diego</p>
+
+          <div class="about-location">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+              <circle cx="12" cy="10" r="3"/>
+            </svg>
+            <span>San Francisco, CA</span>
+          </div>
+
+          <div class="social-row">
+            <a href="mailto:youremail@gmail.com" title="Email">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                <polyline points="22,6 12,13 2,6"/>
+              </svg>
+            </a>
+            <a href="https://www.linkedin.com/in/chester-huey/" target="_blank" rel="noopener" title="LinkedIn">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/>
+                <rect x="2" y="9" width="4" height="12"/>
+                <circle cx="4" cy="4" r="2"/>
+              </svg>
+            </a>
+            <a href="https://github.com/ChesterHuey1" target="_blank" rel="noopener" title="GitHub">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="about-right">
+          <h2>About me</h2>
+          <p>I am a Computer Science student passionate about building impactful products to make people's lives better with software.</p>
+          <p>I develop full-stack web applications with a focus on building reliable, responsive front-end interfaces that simplify complex ideas. I'm also interested in applying AI and deep learning to create smarter, data-driven web solutions that enhance functionality and interactivity.</p>
+          <p>I am actively pursuing opportunities in Software Engineering, and am eager to showcase my skills and gain insights into industry-standard practices.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Experience ─────────────────────────────────────────── -->
+  <section id="experience">
+    <div class="section-inner">
+      <h2>Experience</h2>
+      <div class="exp-list">
+
+        <!-- Ivern -->
+        <div class="exp-card">
+          <div class="exp-logo">
+            <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+              <rect width="64" height="64" rx="8" fill="#dcfce7"/>
+              <ellipse cx="32" cy="40" rx="13" ry="11" fill="#4ade80"/>
+              <ellipse cx="32" cy="29" rx="12" ry="11" fill="#4ade80"/>
+              <circle cx="26" cy="23" r="5" fill="white"/>
+              <circle cx="38" cy="23" r="5" fill="white"/>
+              <circle cx="27" cy="24" r="2.5" fill="#111"/>
+              <circle cx="39" cy="24" r="2.5" fill="#111"/>
+              <path d="M26 34 Q32 39 38 34" stroke="#16a34a" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+              <ellipse cx="19" cy="46" rx="7" ry="4" fill="#4ade80" transform="rotate(-20 19 46)"/>
+              <ellipse cx="45" cy="46" rx="7" ry="4" fill="#4ade80" transform="rotate(20 45 46)"/>
+            </svg>
+          </div>
+          <div class="exp-body">
+            <div class="exp-header">
+              <div>
+                <div class="exp-role">Chief Technology Officer</div>
+                <div class="exp-company">Ivern</div>
+              </div>
+              <div class="exp-meta">
+                <p>January 2024 - Present</p>
+                <span>San Francisco, CA</span>
+              </div>
+            </div>
+            <p class="exp-desc">Led development of internal knowledge aggregator tool unifying Google Drive, Microsoft (Outlook/OneDrive), and Slack. Reduced search time by 50% through centralized indexing and OAuth integration across platforms.</p>
+          </div>
+        </div>
+
+        <!-- SF State -->
+        <div class="exp-card">
+          <div class="exp-logo">
+            <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+              <rect width="64" height="64" rx="8" fill="#fef9c3"/>
+              <ellipse cx="32" cy="42" rx="13" ry="11" fill="#4ade80"/>
+              <ellipse cx="32" cy="31" rx="12" ry="11" fill="#4ade80"/>
+              <circle cx="26" cy="25" r="5" fill="white"/>
+              <circle cx="38" cy="25" r="5" fill="white"/>
+              <circle cx="27" cy="26" r="2.5" fill="#111"/>
+              <circle cx="39" cy="26" r="2.5" fill="#111"/>
+              <path d="M26 36 Q32 41 38 36" stroke="#16a34a" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+              <rect x="22" y="16" width="20" height="4" rx="1" fill="#1e3a5f"/>
+              <polygon points="32,9 44,16 32,19 20,16" fill="#1e3a5f"/>
+              <line x1="44" y1="16" x2="44" y2="22" stroke="#1e3a5f" stroke-width="2"/>
+              <circle cx="44" cy="23" r="2" fill="#fbbf24"/>
+            </svg>
+          </div>
+          <div class="exp-body">
+            <div class="exp-header">
+              <div>
+                <div class="exp-role">Research Assistant</div>
+                <div class="exp-company">San Francisco State University - Mobile and Intelligent Computing Lab</div>
+              </div>
+              <div class="exp-meta">
+                <p>June 2023 - August 2023</p>
+                <span>San Francisco, CA</span>
+              </div>
+            </div>
+            <p class="exp-desc">Deployed 8-bit quantized MobileNetV2 CNN on Sony Spresense microcontroller with PyTorch, achieving 85% accuracy on 500K+ images. Customized L1-norm pruning to reduce model size by 70% and latency by 60%.</p>
+          </div>
+        </div>
+
+        <!-- Delaget -->
+        <div class="exp-card">
+          <div class="exp-logo">
+            <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+              <rect width="64" height="64" rx="8" fill="#ffe4e6"/>
+              <ellipse cx="32" cy="42" rx="13" ry="11" fill="#4ade80"/>
+              <ellipse cx="32" cy="31" rx="12" ry="11" fill="#4ade80"/>
+              <circle cx="26" cy="25" r="5" fill="white"/>
+              <circle cx="38" cy="25" r="5" fill="white"/>
+              <circle cx="27" cy="26" r="2.5" fill="#111"/>
+              <circle cx="39" cy="26" r="2.5" fill="#111"/>
+              <path d="M26 36 Q32 41 38 36" stroke="#16a34a" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+              <rect x="23" y="18" width="18" height="4" rx="1" fill="white" stroke="#d1d5db" stroke-width="1"/>
+              <ellipse cx="32" cy="16" rx="10" ry="6" fill="white" stroke="#d1d5db" stroke-width="1"/>
+            </svg>
+          </div>
+          <div class="exp-body">
+            <div class="exp-header">
+              <div>
+                <div class="exp-role">Software Development Consultant</div>
+                <div class="exp-company">Delaget</div>
+              </div>
+              <div class="exp-meta">
+                <p>February 2023 - March 2023</p>
+                <span>San Francisco, CA</span>
+              </div>
+            </div>
+            <p class="exp-desc">Developed interactive dashboards with React and Chart.js for restaurant owners to visualize sales, staffing, and inventory data. Cleaned and normalized API responses for consistency.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Projects ───────────────────────────────────────────── -->
+  <section id="projects">
+    <div class="section-inner">
+      <h2>Projects</h2>
+      <div class="projects-grid">
+
+        <!-- Melody Map -->
+        <div class="project-card">
+          <div class="project-thumb">
+            <svg viewBox="0 0 400 225" xmlns="http://www.w3.org/2000/svg">
+              <rect width="400" height="225" fill="#f0fdf4"/>
+              <text x="42" y="78" font-size="30" fill="#4ade80" opacity="0.35">♪</text>
+              <text x="318" y="58" font-size="22" fill="#4ade80" opacity="0.28">♫</text>
+              <text x="282" y="185" font-size="26" fill="#4ade80" opacity="0.3">♩</text>
+              <text x="55" y="185" font-size="20" fill="#4ade80" opacity="0.28">♬</text>
+              <g class="anim-hop" style="transform-origin:200px 130px">
+                <ellipse cx="200" cy="150" rx="38" ry="32" fill="#4ade80"/>
+                <ellipse cx="200" cy="118" rx="34" ry="30" fill="#4ade80"/>
+                <ellipse cx="200" cy="158" rx="25" ry="19" fill="#bbf7d0"/>
+                <circle cx="184" cy="104" r="10" fill="white"/>
+                <circle cx="216" cy="104" r="10" fill="white"/>
+                <circle cx="185" cy="106" r="5.5" fill="#111"/>
+                <circle cx="217" cy="106" r="5.5" fill="#111"/>
+                <circle cx="187" cy="104" r="2" fill="white"/>
+                <circle cx="219" cy="104" r="2" fill="white"/>
+                <path d="M188 127 Q200 135 212 127" stroke="#16a34a" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+                <!-- headphones -->
+                <path d="M177 104 Q179 90 200 90 Q221 90 223 104" stroke="#1e3a5f" stroke-width="4" fill="none"/>
+                <rect x="171" y="101" width="10" height="13" rx="4" fill="#1e3a5f"/>
+                <rect x="219" y="101" width="10" height="13" rx="4" fill="#1e3a5f"/>
+                <!-- legs -->
+                <ellipse cx="174" cy="182" rx="17" ry="9" fill="#4ade80" transform="rotate(-15 174 182)"/>
+                <ellipse cx="226" cy="182" rx="17" ry="9" fill="#4ade80" transform="rotate(15 226 182)"/>
+              </g>
+            </svg>
+          </div>
+          <div class="project-body">
+            <div class="project-header">
+              <h3 class="project-title"><a href="https://github.com/ChesterHuey1/" target="_blank" rel="noopener">Melody Map</a></h3>
+              <span class="project-date">March 2025 - June 2025</span>
+            </div>
+            <p class="project-desc">Playlist optimization tool using Spotify API, HTML, CSS, and JavaScript. Analyzes user mood and top tracks to generate personalized music recommendations with CI/CD via GitHub Actions.</p>
+            <div class="tags">
+              <span class="tag">React</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">Spotify API</span>
+              <span class="tag">GitHub Actions</span>
+              <span class="tag">CI/CD</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Style Swipe -->
+        <div class="project-card">
+          <div class="project-thumb">
+            <svg viewBox="0 0 400 225" xmlns="http://www.w3.org/2000/svg">
+              <rect width="400" height="225" fill="#fdf4ff"/>
+              <g class="anim-float" style="transform-origin:200px 112px">
+                <ellipse cx="200" cy="150" rx="38" ry="32" fill="#4ade80"/>
+                <ellipse cx="200" cy="116" rx="34" ry="30" fill="#4ade80"/>
+                <ellipse cx="200" cy="157" rx="25" ry="19" fill="#bbf7d0"/>
+                <circle cx="184" cy="102" r="10" fill="white"/>
+                <circle cx="216" cy="102" r="10" fill="white"/>
+                <circle cx="185" cy="104" r="5.5" fill="#111"/>
+                <circle cx="217" cy="104" r="5.5" fill="#111"/>
+                <circle cx="187" cy="102" r="2" fill="white"/>
+                <circle cx="219" cy="102" r="2" fill="white"/>
+                <path d="M188 125 Q200 133 212 125" stroke="#16a34a" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+                <!-- bow tie -->
+                <polygon points="190,135 200,131 210,135 200,139" fill="#e879f9"/>
+                <polygon points="190,135 184,129 184,141" fill="#d946ef"/>
+                <polygon points="210,135 216,129 216,141" fill="#d946ef"/>
+                <circle cx="200" cy="135" r="3" fill="#c026d3"/>
+                <!-- beret -->
+                <ellipse cx="200" cy="90" rx="21" ry="10" fill="#e879f9"/>
+                <circle cx="200" cy="85" rx="4" ry="4" fill="#c026d3"/>
+                <!-- cards in hands -->
+                <ellipse cx="162" cy="138" rx="11" ry="7" fill="#4ade80" transform="rotate(-30 162 138)"/>
+                <rect x="145" y="129" width="14" height="18" rx="2" fill="white" stroke="#e5e7eb" stroke-width="1"/>
+                <ellipse cx="238" cy="138" rx="11" ry="7" fill="#4ade80" transform="rotate(30 238 138)"/>
+                <rect x="241" y="129" width="14" height="18" rx="2" fill="white" stroke="#e5e7eb" stroke-width="1"/>
+                <!-- legs -->
+                <ellipse cx="174" cy="182" rx="17" ry="9" fill="#4ade80" transform="rotate(-15 174 182)"/>
+                <ellipse cx="226" cy="182" rx="17" ry="9" fill="#4ade80" transform="rotate(15 226 182)"/>
+              </g>
+            </svg>
+          </div>
+          <div class="project-body">
+            <div class="project-header">
+              <h3 class="project-title"><a href="https://github.com/ChesterHuey1/" target="_blank" rel="noopener">Style Swipe</a></h3>
+              <span class="project-date">October 2024 - December 2024</span>
+            </div>
+            <p class="project-desc">Fashion social media platform with TypeScript and Tailwind CSS. Express API integration, and E2E testing using Playwright.</p>
+            <div class="tags">
+              <span class="tag">React</span>
+              <span class="tag">TypeScript</span>
+              <span class="tag">Node.js</span>
+              <span class="tag">MongoDB</span>
+              <span class="tag">Express</span>
+              <span class="tag">Tailwind CSS</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Fantasy Face-off -->
+        <div class="project-card">
+          <div class="project-thumb">
+            <svg viewBox="0 0 400 225" xmlns="http://www.w3.org/2000/svg">
+              <rect width="400" height="225" fill="#fff7ed"/>
+              <g class="anim-breathe" style="transform-origin:200px 112px">
+                <ellipse cx="200" cy="150" rx="38" ry="32" fill="#4ade80"/>
+                <ellipse cx="200" cy="116" rx="34" ry="30" fill="#4ade80"/>
+                <ellipse cx="200" cy="157" rx="25" ry="19" fill="#bbf7d0"/>
+                <circle cx="184" cy="102" r="10" fill="white"/>
+                <circle cx="216" cy="102" r="10" fill="white"/>
+                <circle cx="185" cy="104" r="5.5" fill="#111"/>
+                <circle cx="217" cy="104" r="5.5" fill="#111"/>
+                <circle cx="187" cy="102" r="2" fill="white"/>
+                <circle cx="219" cy="102" r="2" fill="white"/>
+                <path d="M188 125 Q200 133 212 125" stroke="#16a34a" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+                <!-- jersey number -->
+                <text x="192" y="155" font-size="20" font-weight="700" fill="#16a34a" font-family="Inter,sans-serif">7</text>
+                <!-- football -->
+                <ellipse cx="244" cy="116" rx="16" ry="10" fill="#92400e" transform="rotate(-20 244 116)"/>
+                <line x1="232" y1="113" x2="256" y2="109" stroke="white" stroke-width="1.5"/>
+                <line x1="235" y1="107" x2="238" y2="119" stroke="white" stroke-width="1"/>
+                <line x1="243" y1="106" x2="246" y2="118" stroke="white" stroke-width="1"/>
+                <line x1="251" y1="106" x2="254" y2="118" stroke="white" stroke-width="1"/>
+                <ellipse cx="228" cy="128" rx="11" ry="7" fill="#4ade80" transform="rotate(20 228 128)"/>
+                <!-- legs -->
+                <ellipse cx="174" cy="182" rx="17" ry="9" fill="#4ade80" transform="rotate(-15 174 182)"/>
+                <ellipse cx="226" cy="182" rx="17" ry="9" fill="#4ade80" transform="rotate(15 226 182)"/>
+              </g>
+            </svg>
+          </div>
+          <div class="project-body">
+            <div class="project-header">
+              <h3 class="project-title"><a href="https://github.com/ChesterHuey1/" target="_blank" rel="noopener">Fantasy Face-off</a></h3>
+              <span class="project-date">August 2023 - November 2023</span>
+            </div>
+            <p class="project-desc">React-based fantasy sports app with interactive player cards, leaderboards, and live score updates. Integrated RESTful sports APIs with responsive CSS Grid/Flexbox UI.</p>
+            <div class="tags">
+              <span class="tag">React</span>
+              <span class="tag">RESTful API</span>
+              <span class="tag">JavaScript</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Weather Trip Planner -->
+        <div class="project-card">
+          <div class="project-thumb">
+            <svg viewBox="0 0 400 225" xmlns="http://www.w3.org/2000/svg">
+              <rect width="400" height="225" fill="#f0f9ff"/>
+              <!-- clouds -->
+              <ellipse cx="320" cy="50" rx="42" ry="26" fill="white" opacity="0.8"/>
+              <ellipse cx="350" cy="44" rx="30" ry="20" fill="white" opacity="0.8"/>
+              <circle cx="338" cy="42" r="14" fill="#fbbf24" opacity="0.55"/>
+              <!-- rain drops -->
+              <line x1="96" y1="28" x2="91" y2="50" stroke="#7dd3fc" stroke-width="2" opacity="0.5"/>
+              <line x1="120" y1="18" x2="115" y2="40" stroke="#7dd3fc" stroke-width="2" opacity="0.5"/>
+              <line x1="76" y1="45" x2="71" y2="67" stroke="#7dd3fc" stroke-width="2" opacity="0.45"/>
+              <line x1="108" y1="40" x2="103" y2="62" stroke="#7dd3fc" stroke-width="2" opacity="0.4"/>
+              <g class="anim-float" style="transform-origin:200px 115px; animation-delay:0.6s">
+                <ellipse cx="200" cy="150" rx="38" ry="32" fill="#22d3ee"/>
+                <ellipse cx="200" cy="116" rx="34" ry="30" fill="#22d3ee"/>
+                <ellipse cx="200" cy="157" rx="25" ry="19" fill="#a5f3fc"/>
+                <circle cx="184" cy="102" r="10" fill="white"/>
+                <circle cx="216" cy="102" r="10" fill="white"/>
+                <circle cx="185" cy="104" r="5.5" fill="#111"/>
+                <circle cx="217" cy="104" r="5.5" fill="#111"/>
+                <circle cx="187" cy="102" r="2" fill="white"/>
+                <circle cx="219" cy="102" r="2" fill="white"/>
+                <path d="M188 125 Q200 133 212 125" stroke="#0e7490" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+                <!-- rain hat -->
+                <path d="M177 95 Q200 80 223 95" fill="#0ea5e9"/>
+                <rect x="173" y="94" width="54" height="5" rx="2" fill="#0ea5e9"/>
+                <!-- umbrella handle -->
+                <line x1="200" y1="80" x2="200" y2="64" stroke="#0284c7" stroke-width="3"/>
+                <path d="M200 64 Q208 58 208 70" stroke="#0284c7" stroke-width="2" fill="none"/>
+                <!-- legs -->
+                <ellipse cx="174" cy="182" rx="17" ry="9" fill="#22d3ee" transform="rotate(-15 174 182)"/>
+                <ellipse cx="226" cy="182" rx="17" ry="9" fill="#22d3ee" transform="rotate(15 226 182)"/>
+              </g>
+            </svg>
+          </div>
+          <div class="project-body">
+            <div class="project-header">
+              <h3 class="project-title"><a href="https://github.com/ChesterHuey1/" target="_blank" rel="noopener">Google CSSI - Weather Trip Planner</a></h3>
+              <span class="project-date">May 2022 - July 2022</span>
+            </div>
+            <p class="project-desc">Built weather-aware trip planner with HTML, CSS, and JavaScript. Scraped travel websites using Node.js and Cheerio, integrated OpenWeatherMap API for weather-based scheduling.</p>
+            <div class="tags">
+              <span class="tag">JavaScript</span>
+              <span class="tag">HTML</span>
+              <span class="tag">CSS</span>
+              <span class="tag">Node.js</span>
+              <span class="tag">Cheerio</span>
+              <span class="tag">OpenWeatherMap API</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Powell Bowell -->
+        <div class="project-card">
+          <div class="project-thumb">
+            <svg viewBox="0 0 400 225" xmlns="http://www.w3.org/2000/svg">
+              <rect width="400" height="225" fill="#fef2f2"/>
+              <g class="anim-hop" style="transform-origin:200px 115px; animation-delay:0.9s">
+                <ellipse cx="200" cy="150" rx="38" ry="32" fill="#4ade80"/>
+                <ellipse cx="200" cy="116" rx="34" ry="30" fill="#4ade80"/>
+                <ellipse cx="200" cy="157" rx="25" ry="19" fill="#bbf7d0"/>
+                <circle cx="184" cy="102" r="10" fill="white"/>
+                <circle cx="216" cy="102" r="10" fill="white"/>
+                <circle cx="185" cy="104" r="5.5" fill="#111"/>
+                <circle cx="217" cy="104" r="5.5" fill="#111"/>
+                <circle cx="187" cy="102" r="2" fill="white"/>
+                <circle cx="219" cy="102" r="2" fill="white"/>
+                <!-- big eating grin -->
+                <path d="M184 127 Q200 142 216 127" stroke="#16a34a" stroke-width="3" fill="#bbf7d0"/>
+                <!-- fork -->
+                <line x1="158" y1="102" x2="158" y2="148" stroke="#6b7280" stroke-width="3"/>
+                <line x1="154" y1="102" x2="154" y2="114" stroke="#6b7280" stroke-width="2"/>
+                <line x1="162" y1="102" x2="162" y2="114" stroke="#6b7280" stroke-width="2"/>
+                <!-- spoon -->
+                <line x1="242" y1="118" x2="242" y2="148" stroke="#6b7280" stroke-width="3"/>
+                <ellipse cx="242" cy="110" rx="7" ry="9" fill="#9ca3af" stroke="#6b7280" stroke-width="1.5"/>
+                <!-- burger -->
+                <ellipse cx="200" cy="84" rx="15" ry="8" fill="#92400e"/>
+                <rect x="185" y="85" width="30" height="8" fill="#fbbf24"/>
+                <rect x="186" y="87" width="12" height="3" rx="1" fill="#4ade80"/>
+                <ellipse cx="200" cy="93" rx="15" ry="7" fill="#92400e"/>
+                <!-- legs -->
+                <ellipse cx="174" cy="182" rx="17" ry="9" fill="#4ade80" transform="rotate(-15 174 182)"/>
+                <ellipse cx="226" cy="182" rx="17" ry="9" fill="#4ade80" transform="rotate(15 226 182)"/>
+              </g>
+            </svg>
+          </div>
+          <div class="project-body">
+            <div class="project-header">
+              <h3 class="project-title"><a href="https://github.com/ChesterHuey1/" target="_blank" rel="noopener">Powell Bowell</a></h3>
+              <span class="project-date">January 2025</span>
+            </div>
+            <p class="project-desc">Developed a Restaurant picker for food near UC San Diego Campus with the ability to randomize or query certain foods.</p>
+            <div class="tags">
+              <span class="tag">HTML</span>
+              <span class="tag">CSS</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">Github Actions</span>
+              <span class="tag">Linting</span>
+              <span class="tag">Jest</span>
+              <span class="tag">PlayWright</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Footer ─────────────────────────────────────────────── -->
+  <footer>
+    <p>© 2024 Chester Huey: Built with React &amp; Tailwind CSS.</p>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

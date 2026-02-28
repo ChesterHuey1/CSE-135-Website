@@ -1,0 +1,796 @@
+/* ─── VARIABLES ─────────────────────────────────────────────── */
+:root {
+  --bg:       #f5f0e8;
+  --paper:    #ede8de;
+  --brick:    #1a1a1a;
+  --brick2:   #2d2d2d;
+  --red:      #c0392b;
+  --yellow:   #e8c840;
+  --teal:     #1a6b5a;
+  --ink:      #0f0f0f;
+  --muted:    #666;
+  --border-w: 3px;
+  --shadow:   5px 5px 0px #1a1a1a;
+  --shadow-sm:3px 3px 0px #1a1a1a;
+  --font-display: 'Bebas Neue', sans-serif;
+  --font-mono: 'DM Mono', monospace;
+  --font-body: 'DM Sans', sans-serif;
+}
+
+/* ─── RESET ─────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.5;
+  min-height: 100vh;
+}
+
+/* ─── HEADER ─────────────────────────────────────────────────── */
+.site-header {
+  padding: 2rem 3rem 1.5rem;
+  border-bottom: var(--border-w) solid var(--brick);
+  background: var(--brick);
+  display: flex;
+  align-items: baseline;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.logo {
+  font-family: var(--font-display);
+  font-size: clamp(3.5rem, 9vw, 7rem);
+  letter-spacing: 0.06em;
+  color: var(--bg);
+  line-height: 1;
+}
+.logo span { color: var(--yellow); }
+
+.tagline {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: #999;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  border-left: 3px solid var(--yellow);
+  padding-left: 0.75rem;
+}
+
+/* ─── SECTION TITLE ──────────────────────────────────────────── */
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+  letter-spacing: 0.1em;
+  color: var(--ink);
+  margin-bottom: 1.5rem;
+  border-bottom: var(--border-w) solid var(--ink);
+  padding-bottom: 0.4rem;
+  display: inline-block;
+}
+
+/* ─── SECTIONS ───────────────────────────────────────────────── */
+section {
+  padding: 2.5rem 3rem;
+  border-bottom: var(--border-w) solid var(--brick);
+  position: relative;
+}
+
+section:nth-child(even) { background: var(--paper); }
+
+@media (max-width: 700px) {
+  section, .site-header { padding-left: 1.25rem; padding-right: 1.25rem; }
+}
+
+/* ─── FORM ───────────────────────────────────────────────────── */
+.song-form { display: flex; flex-direction: column; gap: 1rem; }
+
+.form-row {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  flex: 1;
+  min-width: 160px;
+}
+.field.full { flex: 100%; }
+
+label {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--brick2);
+  font-weight: 500;
+}
+
+input, select, textarea {
+  background: #fff;
+  border: var(--border-w) solid var(--brick);
+  border-radius: 0;
+  color: var(--ink);
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  padding: 0.6rem 0.8rem;
+  outline: none;
+  width: 100%;
+  transition: box-shadow 0.1s;
+}
+
+input:focus, select:focus, textarea:focus {
+  box-shadow: var(--shadow-sm);
+  border-color: var(--red);
+}
+
+select {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%231a1a1a' stroke-width='2' fill='none' stroke-linecap='square'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.8rem center;
+  padding-right: 2.5rem;
+}
+
+textarea { resize: vertical; min-height: 70px; }
+input::placeholder, textarea::placeholder { color: #aaa; font-style: italic; }
+
+.form-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+.form-error {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--red);
+  font-weight: 500;
+  flex: 1;
+}
+
+.btn-add {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  letter-spacing: 0.12em;
+  background: var(--red);
+  color: #fff;
+  border: var(--border-w) solid var(--ink);
+  border-radius: 0;
+  padding: 0.65rem 2rem;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow 0.1s, transform 0.1s;
+}
+.btn-add:hover { box-shadow: var(--shadow); transform: translate(-2px, -2px); }
+.btn-add:active { box-shadow: 1px 1px 0 var(--ink); transform: translate(2px, 2px); }
+
+/* ─── STATS BAR ──────────────────────────────────────────────── */
+.stats-bar {
+  display: flex !important;
+  gap: 0;
+  padding: 0 !important;
+  flex-wrap: wrap;
+  background: var(--yellow);
+  border-bottom: var(--border-w) solid var(--brick);
+}
+
+.stat {
+  flex: 1;
+  min-width: 110px;
+  text-align: center;
+  padding: 1.2rem 1rem;
+  border-right: var(--border-w) solid var(--brick);
+}
+.stat:last-child { border-right: none; }
+
+.stat-num {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 2.4rem;
+  color: var(--ink);
+  line-height: 1;
+}
+
+.stat-label {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--brick2);
+}
+
+/* ─── FILTER BAR ─────────────────────────────────────────────── */
+.filter-bar {
+  display: flex !important;
+  gap: 1rem;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  background: var(--paper);
+  padding-top: 1.25rem !important;
+  padding-bottom: 1.25rem !important;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+.filter-group select { min-width: 150px; }
+
+.btn-clear {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+  background: var(--brick);
+  color: var(--bg);
+  border: var(--border-w) solid var(--brick);
+  border-radius: 0;
+  padding: 0.5rem 1.2rem;
+  cursor: pointer;
+  margin-left: auto;
+  box-shadow: var(--shadow-sm);
+  transition: background 0.1s, box-shadow 0.1s, transform 0.1s;
+}
+.btn-clear:hover { background: var(--red); border-color: var(--ink); box-shadow: var(--shadow); transform: translate(-2px, -2px); }
+.btn-clear:active { transform: translate(2px, 2px); box-shadow: 1px 1px 0 var(--ink); }
+
+/* ─── TIMELINE ───────────────────────────────────────────────── */
+.timeline-section { background: var(--bg); }
+
+.timeline {
+  position: relative;
+  padding-left: 3rem;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 0.8rem;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: var(--brick);
+}
+
+.timeline-year-group { margin-bottom: 2rem; }
+
+.timeline-year-label {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  color: #fff;
+  background: var(--brick);
+  letter-spacing: 0.1em;
+  margin-bottom: 0.75rem;
+  position: relative;
+  display: inline-block;
+  padding: 0.1rem 0.7rem;
+}
+.timeline-year-label::before {
+  content: '';
+  position: absolute;
+  left: -2.3rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 14px;
+  height: 14px;
+  background: var(--yellow);
+  border: 3px solid var(--brick);
+}
+
+.timeline-items {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.timeline-item {
+  background: #fff;
+  border: var(--border-w) solid var(--brick);
+  padding: 0.65rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+  transition: box-shadow 0.1s, transform 0.1s;
+  box-shadow: var(--shadow-sm);
+}
+.timeline-item:hover { box-shadow: var(--shadow); transform: translate(-2px, -2px); }
+.timeline-item.highlighted { background: var(--yellow); }
+
+.tl-dot {
+  width: 10px;
+  height: 10px;
+  border: 2px solid var(--ink);
+  flex-shrink: 0;
+}
+
+.tl-title {
+  font-weight: 600;
+  font-size: 0.88rem;
+  font-family: var(--font-body);
+}
+.tl-artist {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--muted);
+}
+.tl-genre-badge {
+  margin-left: auto;
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.08em;
+  padding: 0.15rem 0.5rem;
+  border: 2px solid var(--ink);
+  white-space: nowrap;
+  font-weight: 500;
+  color: var(--ink);
+  background: var(--bg);
+}
+
+/* ─── SONG GRID ──────────────────────────────────────────────── */
+.song-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.song-card {
+  background: #fff;
+  border: var(--border-w) solid var(--brick);
+  padding: 1.25rem;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  transition: box-shadow 0.1s, transform 0.1s;
+  position: relative;
+}
+.song-card:hover { box-shadow: 8px 8px 0 var(--brick); transform: translate(-3px, -3px); }
+.song-card.highlighted {
+  background: var(--yellow);
+  box-shadow: 8px 8px 0 var(--brick);
+  transform: translate(-3px, -3px);
+}
+
+.card-number {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  color: #ddd;
+  line-height: 1;
+  margin-bottom: 0.4rem;
+}
+.song-card.highlighted .card-number { color: rgba(0,0,0,0.15); }
+
+.card-title {
+  font-weight: 700;
+  font-size: 1rem;
+  margin-bottom: 0.15rem;
+  font-family: var(--font-body);
+}
+.card-artist {
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  color: var(--muted);
+  margin-bottom: 0.8rem;
+}
+.song-card.highlighted .card-artist { color: var(--brick2); }
+
+.card-meta {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.75rem;
+}
+.badge {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.08em;
+  padding: 0.15rem 0.5rem;
+  border: 2px solid;
+  font-weight: 600;
+  border-radius: 0;
+}
+.badge-year  { border-color: var(--ink); color: var(--ink); background: var(--yellow); }
+.badge-genre { border-color: var(--ink); color: var(--ink); background: transparent; }
+.badge-mood  { border-color: var(--red); color: var(--red); background: transparent; }
+.song-card.highlighted .badge-genre { background: #fff; }
+.song-card.highlighted .badge-mood  { background: #fff; }
+
+.card-note {
+  font-size: 0.78rem;
+  color: var(--muted);
+  font-style: italic;
+  border-top: 2px solid var(--brick);
+  padding-top: 0.6rem;
+  margin-top: 0.2rem;
+  font-family: var(--font-mono);
+}
+.song-card.highlighted .card-note { color: var(--brick2); border-top-color: var(--brick); }
+
+.card-delete {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  background: none;
+  border: none;
+  color: #ccc;
+  font-size: 0.9rem;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.1s, color 0.1s;
+  font-family: var(--font-mono);
+  font-weight: 700;
+}
+.song-card:hover .card-delete { opacity: 1; }
+.card-delete:hover { color: var(--red); }
+
+/* ─── GENRE CHART ────────────────────────────────────────────── */
+.chart-section { background: var(--brick); }
+.chart-section .section-title { color: var(--bg); border-bottom-color: var(--yellow); }
+
+.bar-chart {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  max-width: 600px;
+}
+
+.chart-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.chart-label {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: #aaa;
+  width: 90px;
+  text-align: right;
+  flex-shrink: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.chart-bar-track {
+  flex: 1;
+  height: 22px;
+  background: var(--brick2);
+  border: 2px solid #444;
+}
+.chart-bar-fill {
+  height: 100%;
+  background: var(--yellow);
+  transition: width 0.5s steps(20);
+}
+.chart-count {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  color: var(--yellow);
+  width: 28px;
+}
+
+/* ─── EMPTY STATE ────────────────────────────────────────────── */
+.empty-state {
+  text-align: center;
+  padding: 5rem 2rem;
+  color: var(--muted);
+}
+.empty-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  opacity: 0.2;
+}
+.empty-state p {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  line-height: 2;
+}
+
+/* ─── ANIMATIONS ─────────────────────────────────────────────── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(-8px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+.song-card { animation: fadeUp 0.25s ease forwards; }
+.timeline-item { animation: slideIn 0.25s ease forwards; }
+.chart-row { animation: fadeUp 0.25s ease forwards; }
+
+/* ─── SCROLLBAR ──────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--brick); }
+
+/* ─── HORIZONTAL TIMELINE OVERRIDES ────────────────────────── */
+
+/* remove old vertical timeline styles by overriding with horizontal */
+.timeline-section {
+  background: var(--bg);
+  padding-bottom: 0 !important;
+  overflow: hidden;
+}
+
+.timeline-header {
+  padding: 2.5rem 3rem 1.25rem;
+  display: flex;
+  align-items: baseline;
+  gap: 1.5rem;
+}
+.timeline-header .section-title { margin-bottom: 0; }
+
+.drag-hint {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--muted);
+  border: 2px solid var(--brick);
+  padding: 0.2rem 0.6rem;
+  user-select: none;
+}
+
+/* ── viewport: clips the draggable track ── */
+.tl-viewport {
+  width: 100%;
+  overflow: hidden;
+  cursor: grab;
+  padding: 0 3rem;
+  position: relative;
+  /* tall enough for cards above + line + year labels below */
+  padding-bottom: 2.5rem;
+}
+.tl-viewport.is-dragging { cursor: grabbing; }
+
+/* ── horizontal rail — the track that slides ── */
+.tl-track {
+  display: flex;
+  align-items: flex-end; /* cards stack upward from the axis */
+  gap: 0;
+  position: relative;
+  /* width grows to fit items — set by JS */
+  will-change: transform;
+  padding-bottom: 60px; /* space below for year labels */
+  user-select: none;
+}
+
+/* ── axis line drawn via pseudo — spans the track ── */
+.tl-track::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 60px;  /* sits at the bottom of the cards area */
+  height: 4px;
+  background: var(--brick);
+  pointer-events: none;
+}
+
+/* ── the axis bar that spans the full viewport width ── */
+.tl-axis-bar {
+  height: 4px;
+  background: var(--brick);
+  margin: 0 3rem;
+  display: none; /* we use the track::after instead */
+}
+
+/* ── each column = one song ── */
+.tl-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  width: 180px;
+  flex-shrink: 0;
+}
+
+/* ── card that floats above the axis ── */
+.tl-card {
+  width: 160px;
+  background: #fff;
+  border: var(--border-w) solid var(--brick);
+  box-shadow: var(--shadow);
+  padding: 0.75rem;
+  cursor: pointer;
+  transition: box-shadow 0.1s, transform 0.1s;
+  position: relative;
+  margin-bottom: 0;
+  /* stagger alternating cards above/below */
+}
+.tl-col:nth-child(even) .tl-card {
+  /* push even cards lower so they're closer to the axis */
+  margin-top: 60px;
+}
+.tl-col:nth-child(odd) .tl-card {
+  margin-top: 0px;
+}
+
+.tl-card:hover {
+  box-shadow: 6px 6px 0 var(--brick);
+  transform: translate(-2px, -2px);
+}
+.tl-card.highlighted {
+  background: var(--yellow);
+  box-shadow: 6px 6px 0 var(--brick);
+  transform: translate(-2px, -2px);
+}
+
+/* connector line from card bottom to axis */
+.tl-connector {
+  width: 2px;
+  background: var(--brick);
+  flex-shrink: 0;
+}
+.tl-col:nth-child(odd) .tl-connector  { height: 28px; }
+.tl-col:nth-child(even) .tl-connector { height: 28px; }
+
+/* dot ON the axis */
+.tl-dot-axis {
+  width: 12px;
+  height: 12px;
+  background: var(--yellow);
+  border: 3px solid var(--brick);
+  flex-shrink: 0;
+  position: relative;
+  z-index: 2;
+}
+.tl-col.highlighted > .tl-dot-axis {
+  background: var(--red);
+}
+
+/* year label below the axis */
+.tl-year {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  letter-spacing: 0.08em;
+  color: var(--ink);
+  margin-top: 6px;
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+
+/* card internals */
+.tl-song-title {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.8rem;
+  line-height: 1.2;
+  margin-bottom: 0.2rem;
+  color: var(--ink);
+}
+.tl-song-artist {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--muted);
+  margin-bottom: 0.4rem;
+}
+.tl-card.highlighted .tl-song-artist { color: var(--brick2); }
+
+.tl-badge {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.55rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  padding: 0.1rem 0.4rem;
+  border: 2px solid var(--ink);
+  color: var(--ink);
+  background: var(--yellow);
+}
+.tl-card.highlighted .tl-badge { background: #fff; }
+
+/* momentum scroll: track moves smoothly via JS transform */
+.tl-track { transform: translateX(0); }
+
+@media (max-width: 700px) {
+  .tl-viewport { padding-left: 1.25rem; padding-right: 1.25rem; }
+  .timeline-header { padding-left: 1.25rem; padding-right: 1.25rem; }
+}
+
+/* ─── NEUTRALISE OLD VERTICAL TIMELINE ─────────────────────── */
+/* The old .timeline rules pointed at #timeline (now #tl-track).
+   Make sure nothing from those rules leaks into the horizontal layout. */
+.timeline { all: unset; }
+
+/* ─── TL-TRACK HEIGHT: enough room for tall + short card stagger ── */
+.tl-viewport {
+  height: 320px;   /* fixed height — cards + axis + year labels */
+}
+
+.tl-track {
+  height: 100%;
+  align-items: center; /* vertically center the axis row */
+  padding-bottom: 0;
+}
+
+/* Remove the ::after pseudo axis — we draw it via a real element border */
+.tl-track::after { display: none; }
+
+/* The axis is the invisible flex baseline; we draw it with an absolute rule */
+.tl-viewport {
+  position: relative;
+}
+/* Draw the horizontal axis line across the full viewport */
+.tl-viewport::after {
+  content: '';
+  position: absolute;
+  left: 3rem;
+  right: 3rem;
+  /* 56% down feels right for card-stagger layout */
+  top: 56%;
+  height: 4px;
+  background: var(--brick);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Layout each column as a flex column centered on the axis line */
+.tl-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 180px;
+  flex-shrink: 0;
+  position: relative;
+}
+
+/* Odd cols: card floats ABOVE axis */
+.tl-col:nth-child(odd) {
+  flex-direction: column;   /* card → connector → dot → year */
+  justify-content: flex-end;
+  padding-bottom: calc(44% - 6px); /* center dot on axis */
+}
+/* Even cols: card floats BELOW axis */
+.tl-col:nth-child(even) {
+  flex-direction: column-reverse; /* card → connector → dot → year (reversed) */
+  justify-content: flex-end;
+  padding-top: calc(44% - 6px);
+}
+
+/* year label: always sits below the dot */
+.tl-year {
+  position: static;
+  transform: none;
+  left: auto;
+  bottom: auto;
+  font-size: 0.9rem;
+  margin-top: 4px;
+  color: var(--muted);
+}
+/* For even (reversed) columns the year is above the dot visually */
+.tl-col:nth-child(even) .tl-year {
+  order: 1;  /* push to bottom of reversed column = visually below dot */
+  margin-top: 0;
+  margin-bottom: 4px;
+}
+
+/* Dot sits right on the axis line */
+.tl-dot-axis {
+  z-index: 2;
+}
+
+/* Connector between card and dot */
+.tl-connector {
+  height: 24px;
+  width: 2px;
+  background: var(--brick);
+  flex-shrink: 0;
+}
+
+/* Card margin reset */
+.tl-col:nth-child(odd)  .tl-card { margin-top: 0; margin-bottom: 0; }
+.tl-col:nth-child(even) .tl-card { margin-top: 0; margin-bottom: 0; }
