@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Analytics Dashboard</title>
+  <link rel="stylesheet" href="dashboard.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+</head>
+<body>
+
+  <header class="top-bar">
+    <div class="top-bar-left">
+      <span class="logo-text">Analytics</span>
+    </div>
+    <div class="top-bar-right">
+      <span id="last-updated" class="last-updated">—</span>
+    </div>
+  </header>
+
+  <main class="layout">
+
+    <!-- KPI strip -->
+    <section class="kpi-strip">
+      <div class="kpi-card" id="kpi-pageviews">
+        <div class="kpi-label">Pageviews</div>
+        <div class="kpi-value" id="val-pageviews">—</div>
+      </div>
+      <div class="kpi-card" id="kpi-sessions">
+        <div class="kpi-label">Sessions</div>
+        <div class="kpi-value" id="val-sessions">—</div>
+      </div>
+      <div class="kpi-card" id="kpi-events">
+        <div class="kpi-label">Cart Clicks</div>
+        <div class="kpi-value" id="val-events">—</div>
+      </div>
+      <div class="kpi-card" id="kpi-errors">
+        <div class="kpi-label">Errors</div>
+        <div class="kpi-value" id="val-errors">—</div>
+      </div>
+    </section>
+
+    <!-- Charts row -->
+    <section class="charts-row">
+
+      <div class="chart-card wide">
+        <div class="chart-header">
+          <span class="chart-title">Pageviews Over Time</span>
+          <span class="chart-total" id="total-pv"></span>
+        </div>
+        <div id="chart-pv-timeline"></div>
+      </div>
+
+      <div class="chart-card">
+        <div class="chart-header">
+          <span class="chart-title">Events by Type</span>
+          <span class="chart-total" id="total-events-bar"></span>
+        </div>
+        <div id="chart-events-bar"></div>
+      </div>
+
+      <div class="chart-card">
+        <div class="chart-header">
+          <span class="chart-title">Browser Breakdown</span>
+          <span class="chart-total" id="total-browsers"></span>
+        </div>
+        <div id="chart-browsers"></div>
+      </div>
+
+      <div class="chart-card wide">
+        <div class="chart-header">
+          <span class="chart-title">Web Vitals — Avg LCP &amp; TTFB (ms)</span>
+          <span class="chart-total" id="total-vitals"></span>
+        </div>
+        <div id="chart-vitals"></div>
+      </div>
+
+    </section>
+
+    <!-- Analyst Commentary -->
+    <section class="commentary-section">
+      <div class="commentary-header">
+        <span class="commentary-title">Analysis</span>
+      </div>
+      <div id="commentary-cards">
+        <div class="loading">loading commentary…</div>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="dashboard.js"></script>
+</body>
+</html>

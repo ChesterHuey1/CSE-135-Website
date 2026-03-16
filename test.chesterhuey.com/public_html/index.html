@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Pokemon Shop</title>
+
+<style>
+body { font-family: sans-serif; padding:20px; background:#f7f7f7; }
+
+.pokemon{
+  border:1px solid #ccc;
+  padding:10px;
+  margin:10px;
+  display:inline-block;
+  width:150px;
+  text-align:center;
+  background:#fff;
+  border-radius:8px;
+  opacity:0;
+  transform:translateY(20px);
+  transition:all .5s ease;
+}
+
+.pokemon.visible{
+  opacity:1;
+  transform:translateY(0);
+}
+
+.pokemon img{
+  width:100px;
+  height:100px;
+}
+
+.cart{
+  margin-top:20px;
+  padding:10px;
+  border:1px solid #333;
+  background:#fff;
+  border-radius:8px;
+  opacity:0;
+  transform:translateY(20px);
+  transition:all .5s ease;
+}
+
+.cart.visible{
+  opacity:1;
+  transform:translateY(0);
+}
+
+button{
+  margin-top:5px;
+  padding:5px 10px;
+  cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+
+<h1>Pokemon Shop</h1>
+
+<div id="shop">
+
+  <div class="pokemon" data-name="Pikachu" data-price="10">
+    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png">
+    <h3>Pikachu</h3>
+    <p>Price: $10</p>
+    <button onclick="addToCart(this)">Add to Cart</button>
+  </div>
+
+  <div class="pokemon" data-name="Charmander" data-price="12">
+    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png">
+    <h3>Charmander</h3>
+    <p>Price: $12</p>
+    <button onclick="addToCart(this)">Add to Cart</button>
+  </div>
+
+</div>
+
+<div class="cart" id="cart">
+  <h2>Cart</h2>
+  <ul id="cart-items"></ul>
+  <p>Total: $<span id="cart-total">0</span></p>
+</div>
+
+<!-- Collector -->
+<script>
+  window._cq = window._cq || [];
+  _cq.push(['init', {
+    endpoint: 'https://test.chesterhuey.com/collect',
+    respectConsent: false,
+    detectBots: false,
+    enableVitals: true,
+    enableErrors: true,
+    debug: false
+  }]);
+</script>
+<script async src="collector-v9.js"></script>
+
+<script>
+const cart = [];
+
+function renderCart() {
+  const cartItems = document.getElementById("cart-items");
+  cartItems.innerHTML = "";
+  let total = 0;
+  cart.forEach(item => {
+    const li = document.createElement("li");
+    li.textContent = `${item.name} - $${item.price}`;
+    cartItems.appendChild(li);
+    total += item.price;
+  });
+  document.getElementById("cart-total").textContent = total;
+}
+
+function addToCart(button) {
+  const itemDiv = button.parentElement;
+  const name = itemDiv.dataset.name;
+  const price = parseFloat(itemDiv.dataset.price);
+
+  cart.push({ name, price });
+  renderCart();
+
+  _cq.push(['track', 'add_to_cart', { name, price }]);
+}
+
+window.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll(".pokemon").forEach((el, i) => {
+    setTimeout(() => el.classList.add("visible"), i * 200);
+  });
+  setTimeout(() => document.getElementById("cart").classList.add("visible"), 400);
+});
+</script>
+
+</body>
+</html>
